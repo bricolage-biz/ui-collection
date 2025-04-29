@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mukta:wght@200;300;400;500;600;700;800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+/*   color variables */
+:root {
+  --clolor-primary: #81d4fa;
+  --clolor-primary-light: #e1f5fe;
+  --clolor-primary-dark: #4fc3f7;
+  --clolor-gray100: #f9fbff;
+  --clolor-gray150: #f4f6fb;
+  --clolor-gray200: #eef1f6;
+  --clolor-gray300: #e1e5ee;
+  --clolor-gray400: #767b91;
+  --clolor-gray500: #4f546c;
+  --clolor-gray600: #2a324b;
+  --clolor-gray700: #161d34;
+  --clolor-pending: #fff0c2;
+  --clolor-pending-font: #a68b00;
+  --clolor-unpaid: #ffcdd2;
+  --clolor-unpaid-font: #c62828;
+  --clolor-paid: #c8e6c9;
+  --clolor-paid-font: #388e3c;
+  --clolor-link: #2962ff;
+
+  --radius: 0.2rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Mukta", sans-serif;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  color: var(--clolor-gray500);
+  font-size: .9rem;
+  background-color: var(--clolor-gray100);
+}
+
+table {
+  border-collapse: collapse;
+  box-shadow: 0 5px 10px var(--clolor-gray300);
+  background-color: white;
+  text-align: left;
+  overflow: hidden;
+
+  & thead {
+    box-shadow: 0 5px 10px var(--clolor-gray300);
+  }
+  & th {
+    padding: 1rem 2rem;
+    letter-spacing: 0.1rem;
+    font-size: 0.7rem;
+    font-weight: 800;
+  }
+  & td {
+    padding: 1rem 2rem;
+  }
+  & a {
+    text-decoration: none;
+    color: var(--clolor-link);
+  }
+  & .status {
+    border-radius: var(--radius);
+    padding: 0.2rem 1rem;
+    text-align: center;
+    background-color: red;
+
+    &.status-pending {
+      background-color: var(--clolor-pending);
+      color: var(--clolor-pending-font);
+    }
+    &.status-paid {
+      background-color: var(--clolor-paid);
+      color: var(--clolor-paid-font);
+    }
+    &.status-unpaid {
+      background-color: var(--clolor-unpaid);
+      color: var(--clolor-unpaid-font);
+    }
+  }
+
+  & .amount {
+    text-align: right;
+  }
+
+  /* Color alternating rows */
+  & tr:nth-child(even) {
+    background-color: var(--clolor-gray150);
+  }
+}
