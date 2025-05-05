@@ -12,7 +12,10 @@
   <nav>
     <div class="wrapper"> <!-- relative --> 
       <div class="logo"><a href="#">CodingNepal</a></div>
+      <input type="radio" name="slide" id="menu-btn">
+      <input type="radio" name="slide" id="cancel-btn">
       <ul class="nav-links">
+        <label for="cancel-btn" class="btn cancel-btn">X</label>
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
         <li> <!-- relative -->
@@ -27,7 +30,9 @@
           </ul>
         </li>
         <li> <!-- hover effect -->
-          <a href="#">Mega Menu</a>
+          <a href="#" class="desktop-item">Mega Menu</a>
+          <input type="checkbox" id="showMega">
+          <label for="showMega" class="mobile-item">Mega Menu</label>
           <div class="mega-box">  <!-- absolute -->
             <div class="content">
               <div class="mega-col"><img src="https://picsum.photos/100/100" alt="ランダム画像"></div>
@@ -63,6 +68,7 @@
         </li>
         <li><a href="#">Feedback</a></li>
       </ul>
+      <label for="menu-btn" class="btn menu-btn">O</label>
     </div>
   </nav>
 </body>
