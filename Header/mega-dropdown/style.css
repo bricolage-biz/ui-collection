@@ -37,6 +37,214 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-nav .wrapper {
+nav {
   background-color: var(--color-gray700);
+
+  & .wrapper {
+    max-width: 1250px;
+    padding: 0 30px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* mega-boxの大きさの基準とする */
+    min-height: 66px;
+
+    & .logo a {
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    & .nav-links {
+      display: inline-flex;
+    }
+    & .nav-links > li {
+      padding: 1rem 0;
+      position: relative;
+      &:hover .drop-menu {
+        opacity: 1;
+        visibility: visible;
+      transform: translateY(0);
+      }
+    }
+    & .nav-links > li > a {
+      display: block;
+      font-weight: 500;
+      padding: 0.3rem 0.8rem;
+      border-radius: var(--radius);
+      transition: background-color .3s ease;
+      line-height: 1.5;
+      &:hover {
+        background-color: var(--color-gray500);
+      }
+    }
+
+    & .nav-links .mobile-item {
+      display: none;
+    }
+
+    .drop-menu {
+      background-color: var(--color-gray700);
+      position: absolute;
+      top: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transition: transform 0.3s ease;
+      transform: translateY(5px);
+      line-height: 45px;
+      & > li > a {
+        display: block;
+        padding: 0.3rem 1.6rem 0.3rem 0.8rem;
+        border-radius: var(--radius);
+        transition: background-color .3s ease;
+        font-size: 1rem;
+        font-weight: 500;
+        &:hover {
+          background-color: var(--color-gray500);
+        }
+      }
+    }
+
+    li:has(.mega-box) {
+      position: static;
+      &:hover .mega-box {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+    .mega-box {
+      position: absolute;
+      z-index: -1;
+      background: var(--color-gray700);
+      width: 100%;
+      top: 66px;
+      left: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: transform 0.3s ease;
+      transform: translateY(5px);
+
+      .content {
+        display: flex;
+        padding: 1rem 1rem;
+        justify-content: space-between;
+      }
+
+      .content .mega-col {
+        width: calc(25% - 1rem);
+        line-height: 45px;
+      }
+      
+      .content .mega-col img {
+        width: 100%;
+        height: 225px;
+        object-fit: cover;
+        vertical-align: bottom;
+      }
+
+      .content .mega-col header {
+        color: var(--color-gray200);
+        font-weight: 600;
+        font-size: 1.3rem;
+        padding-left: 0.8rem;
+      }
+    }
+
+    .content .mega-col {
+      padding-left: 10px;
+      border-left: 1px solid var(--color-gray400);
+      &:nth-child(1),
+      &:nth-child(2) {
+        border-left: 0px;
+      }
+    }
+
+    .mega-links {
+      li > a {
+        padding: 0.3rem 0.8rem;
+        border-radius: var(--radius);
+        transition: background-color 0.3s ease;
+        &:hover {
+          background-color: var(--color-gray500);
+        }
+      }
+    }    
+  }
+}
+
+@media screen and (max-width: 970px) {
+  nav .wrapper .nav-links {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    max-width: 350px;
+    background-color: var(--color-gray700);
+    display: block;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    padding: 50px 10px;
+    box-shadow: 0 15px 15px rgba(0,0,0,.15);
+    
+    & li a {
+      padding: 0 1.5rem;
+      display: block;
+      line-height: 50px;
+      font-size: 20px;
+    }
+    & .drop-menu {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      top: 65px;
+      padding-left: 1.5rem;
+      width: 100%;
+      max-height: 0;
+      overflow: hidden;
+    }
+
+    #showDrop:checked ~ .drop-menu {
+      max-height: 100%;
+    }
+
+    & .drop-menu a {
+      font-size: 18px;
+    }
+
+    & .desktop-item {
+      display: none;
+    }
+
+    & .mobile-item {
+      display: block;
+      font-size: 20px;
+      padding-left: 1.5rem;
+      line-height: 50px;
+      color: white;
+      cursor: pointer;
+      border-radius: var(--radius);
+      transition: all .3s ease;
+
+      &:hover {
+        background-color: var(--color-gray500);
+      }
+    }
+
+    .mega-box {
+      position: static;
+      width: 100%;
+      top: 66px;
+      opacity: 1;
+      visibility: visible;
+
+      .content {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+.wrapper input {
+  display: none;
 }
