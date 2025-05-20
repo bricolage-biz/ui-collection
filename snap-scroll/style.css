@@ -1,0 +1,51 @@
+:root {
+  /* color variables */
+  --color-primary: #f06292;
+  --color-primary-hover: #fce4ec;
+  --color-primary-dark: #ec407a;
+  --color-gray100: #f9fbff;
+  --color-gray150: #f4f6fb;
+  --color-gray200: #eef1f6;
+  --color-gray300: #e1e5ee;
+  --color-gray400: #767b91;
+  --color-gray500: #4f546c;
+  --color-gray600: #2a324b;
+  --color-gray700: #161d34;
+
+  /* border radius */
+  --radius: 0.2rem;
+  /* gutter */
+  --gutter: 100px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.snap-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  width: 390px;
+  margin: 0 auto;
+
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.item {
+  flex: 0 0 90%;
+  aspect-ratio: 16 / 10;
+  background-color: var(--color);
+  border-radius: 0.6rem;
+
+  scroll-snap-align: start;
+}

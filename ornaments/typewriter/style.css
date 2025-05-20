@@ -1,0 +1,52 @@
+:root {
+  /* color variables */
+  --color-primary: #f06292;
+  --color-primary-hover: #fce4ec;
+  --color-primary-dark: #ec407a;
+  --color-gray100: #f9fbff;
+  --color-gray150: #f4f6fb;
+  --color-gray200: #eef1f6;
+  --color-gray300: #e1e5ee;
+  --color-gray400: #767b91;
+  --color-gray500: #4f546c;
+  --color-gray600: #2a324b;
+  --color-gray700: #161d34;
+
+  /* border radius */
+  --radius: 0.2rem;
+  /* gutter */
+  --gutter: 100px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.typewriter {
+  display: flex;
+  justify-content: center;
+}
+
+p {
+  font-family: monospace;
+  width: 21ch;
+  font-size: 1.5rem;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 1px solid;
+  animation: typing 3s steps(22) forwards;
+  transform-origin: left;
+}
+
+@keyframes typing {
+  from {
+    width: 0ch;
+  }
+  to {
+    width: 21ch;
+  }
+}

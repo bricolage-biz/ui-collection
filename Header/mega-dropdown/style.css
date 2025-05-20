@@ -226,6 +226,7 @@ nav {
       line-height: 50px;
       font-size: 20px;
     }
+
     & .drop-menu {
       position: static;
       opacity: 1;
