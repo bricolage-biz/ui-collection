@@ -33,10 +33,17 @@ body {
 }
 
 .container {
+  /* containerにpaddingを設定する方法 */
   padding-left: var(--gutter);
   padding-right: var(--gutter);
+
+  /* containerサイズそのものを変える方法 */
+  /* width: calc(100% - 2 * var(--gutter));
+  margin: 0 auto; */
+  
   background-color: var(--color-gray300);
 }
+
 section {
   width: 100%;
   height: 100px;

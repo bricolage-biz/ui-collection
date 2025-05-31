@@ -1,0 +1,107 @@
+.reaction-bar {
+  container-type: inline-size;
+}
+
+@container (max-width: 560px) {
+  .reaction-bar .text {
+    display: none;
+  }
+}
+
+/* その他のスタイル */
+
+:root {
+  --main-color: 139, 152, 165;
+  --padding: 16px;
+}
+
+body {
+  font-family: "游ゴシック Medium", YuGothic, YuGothicM,
+    "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  line-height: 1.7;
+  color: rgb(var(--main-color));
+  background-color: rgb(32, 43, 54);
+}
+
+.material-symbols-rounded {
+  color: currentColor;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+.wrapper {
+  display: grid;
+  align-content: start;
+  height: calc(100svh - 16px * 2);
+  padding: var(--padding);
+  grid-template:
+    "nav main" 1fr /
+    200px 1fr;
+}
+
+@media (max-width: 650px) {
+  .wrapper {
+    grid-template:
+      "nav" auto
+      "main" auto
+      / 1fr;
+  }
+}
+
+nav {
+  display: grid;
+  background-color: rgba(var(--main-color), 0.2);
+  writing-mode: vertical-rl;
+  place-content: center;
+}
+
+@media (max-width: 650px) {
+  nav {
+    height: 70px;
+    writing-mode: horizontal-tb;
+  }
+}
+
+.main {
+  padding: var(--padding);
+}
+
+.section-inner {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.section-inner > .tweet {
+  padding: var(--padding);
+  border: 1px solid rgba(var(--main-color), 0.3);
+  border-radius: 3px;
+}
+
+.reaction-bar {
+  font-size: 14px;
+  display: flex;
+  gap: 20px;
+}
+
+.reaction {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+button {
+  width: var(--size);
+  height: var(--size);
+  padding: 0;
+  cursor: pointer;
+  transition: 0.3s;
+  border: none;
+  border-radius: calc(var(--size) / 2);
+  background-color: transparent;
+  --size: 40px;
+}
+
+button:hover {
+  color: rgb(242, 43, 131);
+  background-color: rgba(242, 43, 131, 0.3);
+}
